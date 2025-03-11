@@ -3,12 +3,13 @@ import numpy as np
 import pickle
 from static.python.SuportFunctions import max_pooling
 from static.python.MyFirstCNN import MLP
+import os
 
 app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def index():
-  return render_template('homepage.html')
+  return render_template('index.html')
 
 @app.route('/NeuralNetwork', methods=['POST','GET'])
 def redirect_nn():
@@ -23,7 +24,7 @@ def redirect_nn():
     pickle.dump(image, open('image.pkl','wb'))  # open a file, where you stored the pickled data
 
     # Load the trained model
-    model = pickle.load(open(r"static\model\model.pkl", 'rb'))
+    model = pickle.load(open(os.path.join('static','model','model.pkl'), 'rb'))
     model.predict(image)
     prediction = int(model.prediction)
     accuracy = round(float(model.accuracy)*100,1)
