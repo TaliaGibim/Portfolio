@@ -4,6 +4,7 @@ import pickle
 from static.python.SuportFunctions import average_pooling
 from static.python.MyFirstCNN import MLP
 import os
+import bz2file as bz2
 
 app = Flask(__name__, template_folder='templates')
 
@@ -25,7 +26,11 @@ def redirect_nn():
     # pickle.dump(image, open('image.pkl','wb'))  # open a file, where you stored the pickled data
 
     # Load the trained model
-    model = pickle.load(open(os.path.join('static','model','model.pkl'), 'rb'))
+    #model = pickle.load(open(os.path.join('static','model','model.pkl'), 'rb'))
+
+    with bz2.BZ2File(os.path.join('static','model','model.pkl.bz2'), "rb") as f:
+      model = pickle.load(f)
+
     model.predict(image)
     prediction = int(model.prediction)
     accuracy = round(float(model.accuracy)*100,1)

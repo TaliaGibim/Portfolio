@@ -4,6 +4,7 @@ import pandas as pd
 import pickle
 import os
 import itertools
+import bz2file as bz2
 
 # %% Setinng Relu function and Sigmoid Function
 def relu(x):
@@ -147,8 +148,10 @@ if __name__ == "__main__":
 
     model = MLP([(10,784)],1,0.005)
     model.learning(80, x_train, y_train)
-    pickle.dump(model, open('./model.pkl','wb'))
-    model.modelAccuracy(x_test,y_test)
+    with bz2.BZ2File("model.pkl.bz2", "wb") as f:
+        pickle.dump(model, f)
+    
+
 
 
 
