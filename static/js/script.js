@@ -1,6 +1,6 @@
 
 const canvas = document.querySelector("canvas"),
-ctx = canvas.getContext("2d");
+ctx = canvas.getContext("2d",{ willReadFrequently: true });
 clearCanvas = document.querySelector(".clearButtomCnavas");
 const sendImage = document.getElementById('imagenn');
 

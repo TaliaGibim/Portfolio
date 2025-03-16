@@ -29,20 +29,131 @@
         </div>
  
       </div>
-
-      
   </div>
   </div> 
-
-</section>
-
-<section>
-  <div class="wave1">
+  <div class="wave">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-  </svg>
-  </div>
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+    </svg>
+  </div> 
 </section>
+
+<section class="skills">
+
+  <div class="wrapper skillsWrapper">
+  <div class="skillsGrid">
+
+    <div class="skillsItens">
+        <h3 class="skillsTitle">My neural network from scratch</h3> 
+        <p class="skillsDescription">
+          This neural network was built using only NumPy, without any pre-built packages. The knowledge used for this project was 
+          gained through 
+          <a href="https://www.coursera.org/learn/neural-networks-deep-learning?specialization=deep-learning" class="skillsDescription">
+            this Coursera course
+          </a>
+          by Andrew Ng. In this project, I created a neural network for the 'Hello World' of data science: the digit recognition problem.
+        </p>
+    </div>
+    <div class="skillsItens">
+      <p class="skillsDescription">Using NumPy, Pandas, and object-oriented programming, I created a class that contains my neural network.
+         Using Pickle, this neural network was exported. A grid search was performed to find the best architecture and hyperparameters.
+      </p>
+    </div>
+    <div class="skillsItens">
+      <p class="skillsDescription">The table in bellow summarizes the tests:</p>
+      <br>
+        <div class="flexcenter">
+          <img src="../static/img/DigitRecognizer_parameters.png" class="projectImage" alt="" height="150" width="420"  >
+        </div>
+      <p class="skillsDescription"><br>The total number of tested combinations was 54.</p>
+    </div>
+  </div>
+
+  <div class="skillsGrid " >
+
+    <div class="skillsItens">
+      <h3 class="skillsTitle" >Results</h3> 
+      <p class="skillsDescription">
+        In the graph below, the results of train accuracy for each model are summarized. It is possible to see that the best 
+        architecture is the one with a single layer with 10 neurons.
+      </p>
+      <br>
+        <div class="flexcenter">
+          <img src="../static/img/DigitRecognizer_Accuracy.png" class="projectImage" alt="" height="300" width="400"  >
+        </div>
+      <br>
+      <p class="skillsDescription">
+        In more detail, we can closely examine the results from this architecture to observe the impact of both the scaler 
+        and the alpha parameter. There is no significant difference between using a scaler of 0.005 and 0.01; however, increasing 
+        the interactions clearly improves the model's accuracy, as expected. The best alpha appears to be 1. To confirm these 
+        findings, an ANOVA analysis was performed.
+      </p>
+      
+    </div>
+    
+  </div>
+  </div>
+  
+  <div class="wrapper"><hr></div>
+  <div class="wrapper skillsWrapper">
+  
+    
+    <div class="skillsItens">
+      <h3 class="skillsTitle">ANOVA</h3> 
+      <p class="skillsDescription">
+        Using the Kolmogorov-Smirnov test to check the normality of the distributions, the results showed that all three models 
+        had p-values greater than 0.05, indicating that their distributions are not significantly different from a normal distribution.
+      </p>
+        <br>
+          <div class="flexcenter">
+            <img src="../static/img/DigitRecognizer_NormalityTest.png" class="projectImage" alt="" height="140" width="420"  >
+          </div>
+        <br>
+        <p class="skillsDescription">
+         Given this, we proceeded with ANOVA, which is appropriate for normally distributed data. The ANOVA test revealed a test 
+         statistic of 88.91 and a p-value of 2.38e-17. Since the p-value is less than 0.05, we can reject the null hypothesis, 
+         suggesting that there are significant differences between the models.
+         The Tukey's HSD test was then performed to identify which specific models differ. 
+        </p>
+        
+    </div>
+
+    <div class="skillsGrid " >
+      <div class="skillsItens">
+        <br>
+        <br>
+          <div class="flexcenter">
+            <img src="../static/img/DigitRecognizer_TukeyTest.png" class="projectImage" alt="" height="160" width="500"  >
+          </div>
+        <br>
+        <p class="skillsDescription">
+         Lastly, the effect size (η²) was calculated to be 1.68, indicating that the differences between the models are large 
+         and represent a strong effect.
+         In conclusion, the data for each model is normally distributed, and significant differences were found between the models 
+         according to the ANOVA test. Model 1 was significantly different from Model 3 based on the Tukey's HSD test, and the large 
+         effect size suggests the differences are meaningful.
+        </p>
+         <br>
+         <p class="skillsDescription">
+         Since the choice between Model 1 and Model 2 does not significantly 
+         affect the outcome, the model with the highest training accuracy was selected. 
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <hr>
+    <h3 class="skilltitle">The neural network implemented on this webpage uses an alpha value of 1, a scalar of 0.005, 
+      80 interactions, and a single layer with 10 neurons. This model achieved 90.1% accuracy on the training set and 90.7% 
+      accuracy on the test set.</h3>
+    <hr>
+  </div>
+
+</section>
+
 
 <script src="../static/js/script.js"></script>
 

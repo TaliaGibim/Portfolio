@@ -1,11 +1,11 @@
 /* GLOBAL*/
 :root{
   --black:hwb(0 8% 92%);
-  --dark-gray: hsl(0, 0%, 14%);
-  --green: hsl(153, 71%, 59%);
+  --dark-gray: #242424;
+  --green: rgb(76, 225, 158);
   --gray: hsl(0, 0%, 85%);
   --white: hsl(0, 0%, 100%);
-  --red: hsl(7, 100%, 68%);
+  --red: #ff6f5c;
   --lh-28: 2.8rem;
   --fs-18: 1.8rem;
   --fs-88: 8.8rem;
@@ -184,7 +184,7 @@ h1 > span{
   position: relative;
   display: block;
   width: calc(146% + 1.3px);
-  height: 157px;
+  height: 140px;
   transform: rotateY(180deg);
 }
 
@@ -388,7 +388,7 @@ canvas{
 .herowhiteboard{
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 45px;
 }
 
 
@@ -422,7 +422,16 @@ h2 > span{
 .heroCNN {
   position: relative;
   display: flex;
-  align-items: center;
-  height: 70vh;
+  align-items: flex-start;
+  height: 85vh;
+}
+
+.skillsDescription{
+  text-align: justify;
+}
+
+.flexcenter{
+  display: flex;
+  justify-content: center;
 }
 
